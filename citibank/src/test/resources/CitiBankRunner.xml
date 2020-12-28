@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Selenium Test Suite" parallel="false">
+
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://www.td.com/us/en/personal-banking/"/>
+
+    <!--if you gonna use for cloud & mac you can use "OS X",
+  for local you should use "mac" or "windows"-->
+    <parameter name="platform" value="windows"/>
+
+    <parameter name="cloud" value="false"/>
+    <parameter name="envName" value="browserstack"/>
+    <parameter name="browserVersion" value="85.0"/>
+
+
+
+    <test name="Automation tests">
+        <!--<groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>-->
+
+        <classes>
+
+            <class name="com.tdbanktest.HomePageValidations"/>
+
+
+        </classes>
+    </test>
+</suite>
