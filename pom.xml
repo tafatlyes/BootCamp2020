@@ -21,6 +21,7 @@
         <module>citibank</module>
         <module>cnn</module>
         <module>facebook</module>
+        <module>api</module>
     </modules>
 
     <dependencyManagement>

@@ -1,0 +1,156 @@
+{
+  "tracks": [
+    {
+      "album": {
+        "album_type": "single",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/50IoFVJRAVmpc2tc15U0vP"
+            },
+            "href": "https://api.spotify.com/v1/artists/50IoFVJRAVmpc2tc15U0vP",
+            "id": "50IoFVJRAVmpc2tc15U0vP",
+            "name": "Zehra",
+            "type": "artist",
+            "uri": "spotify:artist:50IoFVJRAVmpc2tc15U0vP"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/2CnkK8kni4M3UiqIYFmlBv"
+        },
+        "href": "https://api.spotify.com/v1/albums/2CnkK8kni4M3UiqIYFmlBv",
+        "id": "2CnkK8kni4M3UiqIYFmlBv",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2736426738e704bcec685bf7240",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e026426738e704bcec685bf7240",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048516426738e704bcec685bf7240",
+            "width": 64
+          }
+        ],
+        "name": "Eleven",
+        "release_date": "2020-10-19",
+        "release_date_precision": "day",
+        "total_tracks": 1,
+        "type": "album",
+        "uri": "spotify:album:2CnkK8kni4M3UiqIYFmlBv"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/50IoFVJRAVmpc2tc15U0vP"
+          },
+          "href": "https://api.spotify.com/v1/artists/50IoFVJRAVmpc2tc15U0vP",
+          "id": "50IoFVJRAVmpc2tc15U0vP",
+          "name": "Zehra",
+          "type": "artist",
+          "uri": "spotify:artist:50IoFVJRAVmpc2tc15U0vP"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 239831,
+      "explicit": true,
+      "external_ids": {
+        "isrc": "QZMEM2097841"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/4dEF7cm6lACjKbegqw876T"
+      },
+      "href": "https://api.spotify.com/v1/tracks/4dEF7cm6lACjKbegqw876T",
+      "id": "4dEF7cm6lACjKbegqw876T",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Eleven",
+      "popularity": 31,
+      "preview_url": "https://p.scdn.co/mp3-preview/e58e35c07cb0a26cac5762aa611de4db5a0b3be5?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:4dEF7cm6lACjKbegqw876T"
+    },
+    {
+      "album": {
+        "album_type": "single",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/50IoFVJRAVmpc2tc15U0vP"
+            },
+            "href": "https://api.spotify.com/v1/artists/50IoFVJRAVmpc2tc15U0vP",
+            "id": "50IoFVJRAVmpc2tc15U0vP",
+            "name": "Zehra",
+            "type": "artist",
+            "uri": "spotify:artist:50IoFVJRAVmpc2tc15U0vP"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/5wH9vEYhVUrgGlXWAXtcaP"
+        },
+        "href": "https://api.spotify.com/v1/albums/5wH9vEYhVUrgGlXWAXtcaP",
+        "id": "5wH9vEYhVUrgGlXWAXtcaP",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273c0fb75cb9b90d747480a762c",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02c0fb75cb9b90d747480a762c",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851c0fb75cb9b90d747480a762c",
+            "width": 64
+          }
+        ],
+        "name": "First Girl",
+        "release_date": "2020-04-01",
+        "release_date_precision": "day",
+        "total_tracks": 1,
+        "type": "album",
+        "uri": "spotify:album:5wH9vEYhVUrgGlXWAXtcaP"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/50IoFVJRAVmpc2tc15U0vP"
+          },
+          "href": "https://api.spotify.com/v1/artists/50IoFVJRAVmpc2tc15U0vP",
+          "id": "50IoFVJRAVmpc2tc15U0vP",
+          "name": "Zehra",
+          "type": "artist",
+          "uri": "spotify:artist:50IoFVJRAVmpc2tc15U0vP"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 209411,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QZFZ52090737"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/2sjK0D3lRL05v984BShhqG"
+      },
+      "href": "https://api.spotify.com/v1/tracks/2sjK0D3lRL05v984BShhqG",
+      "id": "2sjK0D3lRL05v984BShhqG",
+      "is_local": false,
+      "is_playable": true,
+      "name": "First Girl",
+      "popularity": 2,
+      "preview_url": "https://p.scdn.co/mp3-preview/70b2dc4310c8e240f5afa91eba15a38f59750310?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:2sjK0D3lRL05v984BShhqG"
+    }
+  ]
+}
