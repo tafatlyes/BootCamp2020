@@ -44,5 +44,7 @@ public class ExtentTestManager {
         Reporter.log(message + "<br>", true);
         ExtentTestManager.getTest().log(LogStatus.INFO, message + "<br>");
     }
+
+
 }
 

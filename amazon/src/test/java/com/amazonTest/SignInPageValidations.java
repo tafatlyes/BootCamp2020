@@ -13,16 +13,40 @@ public class SignInPageValidations extends TestBase {
     SignInPage signInPage;
 
     @BeforeMethod
-    public void setUpObjects(){
+    public void setUpObjects() {
         landingPage = PageFactory.initElements(driver, LandingPage.class);
         signInPage = PageFactory.initElements(driver, SignInPage.class);
     }
 
 
-
     @Test
-    public void validateUserBeingAbleToEnterEmailAddress(){
+    public void validateUserBeingAbleToEnterEmailAddress() {
         landingPage.clickOnSignInButtonUnderAccountsAndLists();
         signInPage.enterEmailAddress();
     }
+
+
+    @Test
+    public void validateUserBeingAbleToEnterPassword() {
+        landingPage.clickOnSignInButtonUnderAccountsAndLists();
+        signInPage.enterEmailAddress();
+        signInPage.enterPassword();
+    }
+
+    @Test
+    public void validateUserNotBeingAbleToSignInWithInvalidCredentials() {
+        landingPage.clickOnSignInButtonUnderAccountsAndLists();
+        signInPage.enterEmailAddress();
+        signInPage.enterPassword();
+        signInPage.clickOnSignInButtonInSignInPage();
+        captureScreenshot(driver, "validateUserNotBeingAbleToSignInWithInvalidCredentials.png");
+    }
+
+    @Test
+    public void validateUserBeingAbleToClickOnCreateAnAccount() {
+        landingPage.clickOnSignInButtonUnderAccountsAndLists();
+        signInPage.clickOnCreateAnAccount();
+        captureScreenshot(driver, " validateUserBeingAbleToClickOnCreateAnAccount.png");
+    }
+
 }

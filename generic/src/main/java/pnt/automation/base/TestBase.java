@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -27,10 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -91,7 +89,7 @@ public class TestBase {
             System.setProperty("webdriver.gecko.driver", "../generic/src/main/resources/geckodriver.exe");
             driver = new FirefoxDriver();
         }
-        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(35, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
@@ -148,17 +146,18 @@ public class TestBase {
 
 
     //screenshot
-    public static void captureScreenshot(WebDriver driver, String screenshotName) {
-        DateFormat df = new SimpleDateFormat("HH_mm_ss");
+    public static String captureScreenshot(WebDriver driver, String screenshotName) {
+        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH_mma)");
         Date date = new Date();
         df.format(date);
+        String destination = null;
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file, new File(System.getProperty("user.dir") + "/screenshots/" + screenshotName + " " + df.format(date) + ".png"));
-            System.out.println("Screenshot captured");
-        } catch (Exception e) {
-            System.out.println("Exception while taking screenshot " + e.getMessage());
+            destination = System.getProperty("user.dir") + "/screenshots_passed/" + screenshotName + " " + df.format(date) + ".png";
+            FileUtils.copyFile(file, new File(destination));
+        } catch (Exception ignored) {
         }
+        return destination;
     }
 
     //reporting starts
@@ -212,21 +211,18 @@ public class TestBase {
     }
 
 
-
     // Alert Handling Method
-    public Alert alertHandler(){
+    public Alert alertHandler() {
         Alert alert = driver.switchTo().alert();
         return alert;
     }
 
 
-
     //Cookies Handling
-    public WebDriver.Options cookiesHandler(){
+    public WebDriver.Options cookiesHandler() {
         WebDriver.Options cookie = driver.manage();
         return cookie;
     }
-
 
 
     //Selecting items from the drop down menu
@@ -236,9 +232,8 @@ public class TestBase {
     }
 
 
-
-   /* Implicit Wait ==> Waiting  for n seconds before throwing an exception and applicable for all the TestCases,
-                       but if find the element before that time the test case will be executed. */
+    /* Implicit Wait ==> Waiting  for n seconds before throwing an exception and applicable for all the TestCases,
+                        but if find the element before that time the test case will be executed. */
     public void setImplicitWait() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
@@ -252,7 +247,7 @@ public class TestBase {
 
 
     //Popup window Handling
-    public void switchToChildWindow(){
+    public void switchToChildWindow() {
         Set<String> handler = driver.getWindowHandles();
         Iterator<String> it = handler.iterator();
         String parentWindow = it.next();
@@ -261,8 +256,25 @@ public class TestBase {
     }
 
 
+    //switch to tab 2
+    public void switchToTab2() {
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        sleepFor(5);
+        ExtentTestManager.log("tab is switched to tab 2 !!!");
+    }
+
+
+    //switch Back To Tab 1
+    public void switchToTab1() {
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0));
+        ExtentTestManager.log("tab is switched to tab 1 !!!");
+    }
+
+
     // Mouse Hover option.
-    public void mouseHover(WebElement element){
+    public void mouseHover(WebElement element) {
         Actions action = new Actions(driver);
         action.moveToElement(element).build().perform();
     }
@@ -276,30 +288,44 @@ public class TestBase {
 
 
     //Navigation.
-    public WebDriver.Navigation navigate(){
+    public WebDriver.Navigation navigate() {
 
         WebDriver.Navigation navigation = new WebDriver.Navigation() {
             @Override
-            public void back() {}
+            public void back() {
+            }
 
             @Override
-            public void forward() {}
+            public void forward() {
+            }
 
             @Override
-            public void to(String url) {}
+            public void to(String url) {
+            }
 
             @Override
-            public void to(URL url) {}
+            public void to(URL url) {
+            }
 
             @Override
-            public void refresh() {}
+            public void refresh() {
+            }
         };
         return navigation;
     }
 
+    // handle SSL Certification
+    public void notificationHandler() {
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("profile.default_content_setting_values.notifications", 1);
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("prefs", prefs);
+        WebDriver driver = new ChromeDriver(options);
+    }
+
 
     //Scrolling option on the web page by horizontally and vertically.
-    public void scroll(WebElement element){
+    public void scroll(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
@@ -312,8 +338,7 @@ public class TestBase {
     }
 
 
-
-        @AfterSuite
+    @AfterSuite
     public void generateReport() {
         extent.close();
     }

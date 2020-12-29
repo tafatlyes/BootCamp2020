@@ -4,7 +4,7 @@
 <suite name="Selenium Test Suite" parallel="false">
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="https://www.td.com/us/en/personal-banking/"/>
+    <parameter name="url" value="https://www.cnn.com/"/>
 
     <!--if you gonna use for cloud & mac you can use "OS X",
   for local you should use "mac" or "windows"-->
@@ -15,17 +15,13 @@
     <parameter name="browserVersion" value="85.0"/>
 
 
-
     <test name="Automation tests">
-        <!--<groups>
-            <run>
-                <include name="regression"/>
-            </run>
-        </groups>-->
 
         <classes>
 
-            <class name="com.tdbanktest.HomePageValidations"/>
+            <class name="com.cnnTest.LandingPageValidations"/>
+            <class name="com.cnnTest.LogInPageValidations"/>
+            <class name="com.cnnTest.SportsPageValidations"/>
 
         </classes>
     </test>

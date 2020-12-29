@@ -4,7 +4,7 @@
 <suite name="Selenium Test Suite" parallel="false">
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="https://www.td.com/us/en/personal-banking/"/>
+    <parameter name="url" value="https://www.facebook.com/"/>
 
     <!--if you gonna use for cloud & mac you can use "OS X",
   for local you should use "mac" or "windows"-->
@@ -13,7 +13,6 @@
     <parameter name="cloud" value="false"/>
     <parameter name="envName" value="browserstack"/>
     <parameter name="browserVersion" value="85.0"/>
-
 
 
     <test name="Automation tests">
@@ -25,7 +24,8 @@
 
         <classes>
 
-            <class name="com.tdbanktest.HomePageValidations"/>
+            <class name="com.facebookTest.LandingPageValidations"/>
+            <class name="com.facebookTest.HomePageValidations"/>
 
 
         </classes>

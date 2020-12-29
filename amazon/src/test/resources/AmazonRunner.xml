@@ -14,8 +14,6 @@
     <parameter name="envName" value="browserstack"/>
     <parameter name="browserVersion" value="85.0"/>
 
-
-
     <test name="Automation tests">
         <!--<groups>
             <run>
