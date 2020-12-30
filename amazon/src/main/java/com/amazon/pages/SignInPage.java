@@ -42,7 +42,7 @@ public class SignInPage extends TestBase {
 
     public void enterPassword() {
         sleepFor(3);
-        passwordTab.sendKeys("Lyoutcha");
+        passwordTab.sendKeys("Lyoutcha55");
         ExtentTestManager.log("password is provided !!!");
     }
 

@@ -11,6 +11,4 @@ public class DataProviders {
         Object[] data = {"Books", "TV", "Java Books"};
         return data;
     }
-
-
 }

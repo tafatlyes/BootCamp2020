@@ -11,8 +11,6 @@ public class SpotifyPractice {
     "Accept: application/json" -H "Content-Type: application/json" -H "
      */
 
-    //  Zehra id = 50IoFVJRAVmpc2tc15U0vP
-
 
     public String baseURI = RestAssured.baseURI = "https://api.spotify.com/v1/";
 
