@@ -83,4 +83,8 @@ public class LandingPage extends TestBase {
         sleepFor(2);
     }
 
+    public void scroolTest(){
+        scroll(accountAndList);
+    }
+
 }

@@ -89,7 +89,7 @@ public class TestBase {
             System.setProperty("webdriver.gecko.driver", "../generic/src/main/resources/geckodriver.exe");
             driver = new FirefoxDriver();
         }
-        driver.manage().timeouts().pageLoadTimeout(35, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
