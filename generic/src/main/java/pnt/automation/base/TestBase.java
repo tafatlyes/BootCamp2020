@@ -314,7 +314,7 @@ public class TestBase {
         return navigation;
     }
 
-    // handle SSL Certification
+    // handle notifications
     public void notificationHandler() {
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("profile.default_content_setting_values.notifications", 1);
